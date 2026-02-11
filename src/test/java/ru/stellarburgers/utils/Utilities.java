@@ -41,4 +41,13 @@ public class Utilities {
         return new CreatedUserData(generateRandomEmail(), generateincorrectPassword(), generateUniqueName());
     }
 
+    public static void waitFor(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Thread interrupted", e);
+        }
+    }
+
 }

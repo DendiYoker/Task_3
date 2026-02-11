@@ -30,7 +30,7 @@ public class PersonAccountPage extends BasePage {
 //    }
 //
     @Step("Клик по кнопке 'Выход'")
-    public LoginPage clickLoginButton() {
+    public LoginPage clickExitProfileButton() {
         clickWhenReady(exitProfileButton);
         return new LoginPage(driver);
     }
