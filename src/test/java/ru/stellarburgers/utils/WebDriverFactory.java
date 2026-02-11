@@ -29,21 +29,21 @@ public class WebDriverFactory {
 //                driver = new FirefoxDriver(firefoxOptions);
 //                break;
 //
-//            case YANDEX:
-//                // 1. Указываем путь к YandexDriver
-//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/yandexdriver.exe");
-//
-//                // 2. Настройки браузера
-//                ChromeOptions yandexOptions = new ChromeOptions();
-//                yandexOptions.setBinary("C:\\Users\\Denis\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe");
-//                yandexOptions.addArguments("--start-maximized");
-//                yandexOptions.addArguments("--disable-notifications");
-//                yandexOptions.addArguments("--disable-blink-features=AutomationControlled");
-//                yandexOptions.addArguments("--remote-allow-origins=*"); // рекомендуется для новых версий
-//
-//                // 3. Создаём драйвер (используем ChromeDriver, но с yandexdriver.exe)
-//                driver = new ChromeDriver(yandexOptions);
-//                break;
+            case YANDEX:
+                // 1. Указываем путь к YandexDriver
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/yandexdriver.exe");
+
+                // 2. Настройки браузера
+                ChromeOptions yandexOptions = new ChromeOptions();
+                yandexOptions.setBinary("C:\\Users\\Denis\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe");
+                yandexOptions.addArguments("--start-maximized");
+                yandexOptions.addArguments("--disable-notifications");
+                yandexOptions.addArguments("--disable-blink-features=AutomationControlled");
+                yandexOptions.addArguments("--remote-allow-origins=*"); // рекомендуется для новых версий
+
+                // 3. Создаём драйвер (используем ChromeDriver, но с yandexdriver.exe)
+                driver = new ChromeDriver(yandexOptions);
+                break;
 
             case CHROME:
             default:
