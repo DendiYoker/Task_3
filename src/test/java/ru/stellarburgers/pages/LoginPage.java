@@ -27,6 +27,35 @@ public class LoginPage extends BasePage {
         return new RegisterPage(driver); // ← возвращаем страницу регистрации
     }
 
+    @Step("Клик по кнопке 'Восстановить пароль'")
+    public PasswordRecoveryPage clickRestorePasswordButton() {
+        clickWhenReady(restorePasswordButton);
+        return new PasswordRecoveryPage(driver); // ← возвращаем страницу регистрации
+    }
+
+    @Step("Ввести email: {email}")
+    private void enterEmail(String email) {
+        sendKeys(emailField, email);
+    }
+
+    @Step("Ввести пароль: {password}")
+    private void enterPassword(String password) {
+        sendKeys(passwordField, password);
+    }
+
+    @Step("Клик по кнопке 'Войти'")
+    public void clickLoginButton() {
+        clickWhenReady(loginButton);
+    }
+
+    @Step("Авторизация пользователя: {name}, {email}")
+    public MainPage loginUser(String email, String password) {
+        enterEmail(email);
+        enterPassword(password);
+        clickLoginButton();
+        return new MainPage(driver);
+    }
+
     @Step("Проверка отображения страницы входа")
     public boolean isLoginPageDisplayed() {
         return isElementDisplayed(loginButton);

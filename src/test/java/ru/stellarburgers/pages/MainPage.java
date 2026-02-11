@@ -13,15 +13,35 @@ public class MainPage extends BasePage{
 
     private By personalAccountButton = By.xpath("//p[text()='Личный Кабинет']");
     private By signAccountButton = By.xpath("//button[text()='Войти в аккаунт']");
+    private By setOrderButton = By.xpath("//button[text()='Оформить заказ']");
+
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    @Step("Клик по кнопке 'Личный кабинет'")
+    @Step("Клик по кнопке 'Личный кабинет' до авторизации")
     public LoginPage clickPersonalAccount() {
         clickWhenReady(personalAccountButton);
         return new LoginPage(driver); // ← возвращаем страницу логина
+    }
+
+    @Step("Клик по кнопке 'Войти в аккаунт'")
+    public LoginPage clickSignAccountButton() {
+        clickWhenReady(signAccountButton);
+        return new LoginPage(driver); // ← возвращаем страницу логина
+    }
+
+    @Step("Клик по кнопке 'Личный кабинет' после авторизации")
+    public PersonAccountPage clickPersonalAccountButtonAfterLogin() {
+        clickWhenReady(personalAccountButton);
+        return new PersonAccountPage(driver); // ← возвращаем страницу логина
+    }
+
+
+    @Step("Проверка отображения кнопки: 'Оформить заказ'")
+    public boolean isSetOrderButtonDisplayed() {
+        return isElementDisplayed(setOrderButton);
     }
 
 
