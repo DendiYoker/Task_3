@@ -15,6 +15,7 @@ public class RegisterPage extends BasePage {
     private By emailField = By.xpath("//h2[text()='Регистрация']/following-sibling::form//fieldset[.//label[text()='Email']]//input");
     private By passwordField = By.xpath("//h2[text()='Регистрация']/following-sibling::form//fieldset[.//label[text()='Пароль']]//input");
     private By registerButton = By.xpath("//h2[text()='Регистрация']/following::button[text()='Зарегистрироваться']");
+    private By loginButton = By.xpath("//h2[text()='Регистрация']/following::a[text()='Войти']");
 
     //Ошибки
     private By userAlreadyExistsErrorElement = By.xpath("//p[text()='Такой пользователь уже существует']");
@@ -39,6 +40,12 @@ public class RegisterPage extends BasePage {
         sendKeys(passwordField, password);
     }
 
+    @Step("Клик по кнопке 'Войти'")
+    public LoginPage clickLoginButton() {
+        clickWhenReady(loginButton);
+        return new LoginPage(driver);
+    }
+
     @Step("Регистрация пользователя: {name}, {email}")
     public LoginPage registerUser(String name, String email, String password) {
         enterName(name);
@@ -59,9 +66,5 @@ public class RegisterPage extends BasePage {
         attachScreenshot("Состояние страницы перед проверкой ошибки пароля");
         return isElementDisplayed(userAlreadyExistsErrorElement);
     }
-
-
-
-
 
 }

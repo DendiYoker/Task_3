@@ -18,12 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("1. Страница регистрации")
 public class RegistrationTest extends BaseTest{
 
-    private RegisterPage initBrowser(Browser browser) {
-        driver = WebDriverFactory.createDriver(browser);
-        driver.get(baseUrl);
-        return new RegisterPage(driver);
-    }
-
     @ParameterizedTest
     @EnumSource(Browser.class)
     @DisplayName("1.1. Регистрация пользователя - позитивный кейс")
