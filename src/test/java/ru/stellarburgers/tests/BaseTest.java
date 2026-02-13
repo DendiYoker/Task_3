@@ -1,8 +1,6 @@
 package ru.stellarburgers.tests;
 
 import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
-import io.qameta.allure.Step;
 import io.qameta.allure.junit5.AllureJunit5;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;

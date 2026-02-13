@@ -10,11 +10,4 @@ public class BurgersApiConfig {
 
     public static final String DELETE_OR_GET_OR_EDIT_INFORM_USER = "/api/auth/user";
 
-    public static final String ORDERS_ADD = "/api/orders";
-
-    public static final String INGREDIENTS_GET = "/api/ingredients";
-
-    public static final String ORDERS_GET = "/api/orders";
-
-
 }

@@ -4,7 +4,6 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import ru.stellarburgers.dto.CreatedUserData;
 import ru.stellarburgers.dto.LoginUserData;
 import ru.stellarburgers.enums.Browser;
 import ru.stellarburgers.pages.LoginPage;

@@ -14,21 +14,6 @@ public class PersonAccountPage extends BasePage {
         super(driver);
     }
 
-//    @Step("Ввести имя: {name}")
-//    private void enterName(String name) {
-//        sendKeys(nameField, name);
-//    }
-//
-//    @Step("Ввести email: {email}")
-//    private void enterEmail(String email) {
-//        sendKeys(emailField, email);
-//    }
-//
-//    @Step("Ввести пароль: {password}")
-//    private void enterPassword(String password) {
-//        sendKeys(passwordField, password);
-//    }
-//
     @Step("Клик по кнопке 'Выход'")
     public LoginPage clickExitProfileButton() {
         clickWhenReady(exitProfileButton);
@@ -40,26 +25,11 @@ public class PersonAccountPage extends BasePage {
         clickWhenReady(profileButton);
     }
 
-//
-//    @Step("Регистрация пользователя: {name}, {email}")
-//    public LoginPage registerUser(String name, String email, String password) {
-//        enterName(name);
-//        enterEmail(email);
-//        enterPassword(password);
-//        clickWhenReady(registerButton);;
-//        return new LoginPage(driver);
-//    }
-//
     @Step("Проверка наличия кнопки 'Профиль'")
     public boolean isProfileButtonDisplayed() {
         attachScreenshot("Состояние страницы");
         return isElementDisplayed(profileButton);
     }
 
-//    @Step("Проверка отображения ошибки регистрации: Такой пользователь уже существует")
-//    public boolean isUserAlreadyExistErrorDisplayed() {
-//        attachScreenshot("Состояние страницы перед проверкой ошибки пароля");
-//        return isElementDisplayed(userAlreadyExistsErrorElement);
-//    }
 
 }

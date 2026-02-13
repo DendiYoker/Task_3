@@ -1,6 +1,5 @@
 package ru.stellarburgers.api;
 
-import com.google.gson.JsonObject;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
